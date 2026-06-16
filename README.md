@@ -111,13 +111,14 @@ Sales-Analytics-Dashboard/
 
 ```mermaid
 erDiagram
-    Fact_table ||--o{ Product : contains
-    Fact_table ||--o{ Salesperson : assigned
-    Fact_table ||--o{ Customer : linked
-    Fact_table ||--o{ Category : categorized
-    Fact_table ||--o{ PaymentMethod : used
+    FACT_TABLE ||--o{ PRODUCT : ""
+    FACT_TABLE ||--o{ SALESPERSON : ""
+    FACT_TABLE ||--o{ CUSTOMER : ""
+    FACT_TABLE ||--o{ CATEGORY : ""
+    FACT_TABLE ||--o{ PAYMENT_METHOD : ""
+    PRODUCT ||--o{ CATEGORY : ""
 
-    Fact_table {
+    FACT_TABLE {
         int OrderID PK
         int ProductID FK
         int CustomerID FK
@@ -131,7 +132,7 @@ erDiagram
         decimal Returns
     }
 
-    Product {
+    PRODUCT {
         int ProductID PK
         string ProductName
         string Category FK
@@ -139,23 +140,22 @@ erDiagram
         decimal CostPrice
     }
 
-    Salesperson {
+    SALESPERSON {
         int SalesPersonID PK
-        string SalesPersonName
+        string Name
     }
 
-    Customer {
+    CUSTOMER {
         int CustomerID PK
     }
 
-    Category {
+    CATEGORY {
         string Category PK
     }
 
-    PaymentMethod {
-        string PaymentMethod PK
+    PAYMENT_METHOD {
+        string Method PK
     }
-
 
 
 🧩 Macros Included
@@ -217,5 +217,6 @@ Refer to the Data Analytics section in Notion (Sales) for additional context and
 This project is intended for internal use within the Data Analytics team. Distribution outside the organization requires prior approval.
 
 
-✅ Built with Excel | 📊 Powered by Data | 🚀 Driven by Insights"
+✅ Built with Excel | 📊 Powered by Data | 🚀 Driven by Insights
+
 
